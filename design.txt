@@ -1,0 +1,15 @@
+Tensor class
+- numpy array
+- grad = numpy array
+- shape
+- dtype
+- srcs
+- op
+
+MLops class [not state, functional]
+
+- operator
+- forward (srcs) -> out tensor
+- backward (grad, srcs)
+
+loss = mean (X - Y) ^ 2
