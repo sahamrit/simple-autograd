@@ -30,6 +30,12 @@ class Tensor:
         res.srcs = [self, y]
         return res
 
+    def __truediv__(self, y):
+        res = Tensor(mlops.Div.forward(self.arr, y.arr))
+        res.op = mlops.Div
+        res.srcs = [self, y]
+        return res
+
     def backward(self):
         grad: np.array = self.grad
         op = self.op

@@ -34,3 +34,15 @@ class Mul:
     def backward(grad: np.array, srcs: List[np.array]) -> None:
         x, y = srcs
         return [grad * y, grad * x]
+
+class Div:
+
+    @staticmethod
+    def forward(x: np.array, y: np.array) -> np.array:
+        res = x / y
+        return res
+
+    staticmethod
+    def backward(grad: np.array, srcs: List[np.array]) -> None:
+        x, y = srcs
+        return [grad / y, -grad * (x / (y * y))]
